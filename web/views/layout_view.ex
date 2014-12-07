@@ -1,4 +1,3 @@
 defmodule Chatty.LayoutView do
-  use Chatty.Views
-
+  use Chatty.View
 end

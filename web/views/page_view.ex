@@ -1,4 +1,3 @@
 defmodule Chatty.PageView do
-  use Chatty.Views
-
+  use Chatty.View
 end

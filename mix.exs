@@ -4,8 +4,9 @@ defmodule Chatty.Mixfile do
   def project do
     [ app: :chatty,
       version: "0.0.1",
-      elixir: "~> 1.0.0-rc1",
+      elixir: "~> 1.0",
       elixirc_paths: ["lib", "web"],
+      compilers: [:phoenix] ++ Mix.compilers,
       deps: deps ]
   end
 
@@ -24,7 +25,7 @@ defmodule Chatty.Mixfile do
   # { :barbat, "~> 0.1", github: "elixir-lang/barbat" }
   defp deps do
     [
-      {:phoenix, "0.4.0"},
+      {:phoenix, "~> 0.6"},
       {:cowboy, "~> 1.0.0"}
     ]
   end

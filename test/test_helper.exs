@@ -1,2 +1,2 @@
-Phoenix.CodeReloader.reload!
+Chatty.Router.start
 ExUnit.start

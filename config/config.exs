@@ -1,28 +1,28 @@
 # This file is responsible for configuring your application
+# and its dependencies with the aid of the Mix.Config module.
+#
+# This configuration file is loaded before any dependency and
+# is restricted to this project.
 use Mix.Config
 
-# Note this file is loaded before any dependency and is restricted
-# to this project. If another project depends on this project, this
-# file won't be loaded nor affect the parent project.
-
+# Configures the router
 config :phoenix, Chatty.Router,
-  port: System.get_env("PORT"),
-  ssl: false,
-  static_assets: true,
-  cookies: true,
-  session_key: "_chatty_key",
-  session_secret: "#WF12S8EY*K_L1E#PGKU@IQF@XD3LV()P1X2PC2WVD!JDZ*71_=X=+R8%X2K1BVL1Y5BX*2",
-  catch_errors: true,
+  url: [host: "localhost"],
+  http: [port: System.get_env("PORT")],
+  secret_key_base: "DVeyJISj0dpYdy/7zjKgOOgfgAcgc1k6Gg5d1xcR7e8OZdSVUQQdFR1n+0sU40rCh4IyZK6fAm+0wAkL8HjM9Q==",
   debug_errors: false,
   error_controller: Chatty.PageController
 
-config :phoenix, :code_reloader,
-  enabled: false
+# Session configuration
+config :phoenix, Chatty.Router,
+  session: [store: :cookie,
+            key: "_chatty_key"]
 
+# Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Import environment specific config. Note, this must remain at the bottom of
-# this file to properly merge your previous config entries.
+# Import environment specific config. This must remain at the bottom
+# of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
